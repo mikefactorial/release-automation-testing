@@ -22,7 +22,7 @@ steps:
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.3
+    tag: 1.4
     title: 'Testing Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
