@@ -13,14 +13,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: DownloadBuildArtifacts@0
+- task: DownloadPipelineArtifact@2
   inputs:
-    buildType: 'specific'
+    source: 'specific'
     project: 'AA4AM'
     pipeline: '6'
-    buildVersionToDownload: 'latest'
-    downloadType: 'specific'
-    downloadPath: '$(Pipeline.Workspace)\buildPipeline'
+    runVersion: 'latest'
+    targetPath: '$(Pipeline.Workspace)\buildPipeline'
 
 - powershell: 
     Get-ChildItem -Path '$(Pipeline.Workspace)' -recurse
