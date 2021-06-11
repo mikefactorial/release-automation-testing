@@ -17,7 +17,6 @@ steps:
 - task: DownloadPipelineArtifact@2
   displayName: 'Download Build Pipeline Artifact'
 
-steps:
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
   inputs:
