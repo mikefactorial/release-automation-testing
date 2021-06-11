@@ -16,7 +16,7 @@ steps:
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'specific'
-    pipeline: 'buildPipeline'
+    pipeline: buildPipeline
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
     downloadPath: '$(Pipeline.Workspace)\buildPipeline'
