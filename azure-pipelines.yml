@@ -19,13 +19,15 @@ steps:
 
 - powershell: 
     Get-ChildItem -Path '$(Pipeline.Workspace)' -recurse
+    Get-ChildItem -Path '$(Build.ArtifactStagingDirectory)' -recurse
+    Get-ChildItem -Path '$(Build.SourcesDirectory)' -recurse
 
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.6
+    tag: 1.7
     title: 'Testing Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
