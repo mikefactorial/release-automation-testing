@@ -17,7 +17,7 @@ steps:
   inputs:
     buildType: 'specific'
     project: 'AA4AM'
-    pipeline: buildPipeline
+    pipeline: '6'
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
     downloadPath: '$(Pipeline.Workspace)\buildPipeline'
