@@ -16,6 +16,7 @@ steps:
 - task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'specific'
+    project: 'AA4AM'
     pipeline: buildPipeline
     buildVersionToDownload: 'latest'
     downloadType: 'specific'
