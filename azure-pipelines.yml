@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+resources:
+  pipelines: # The pipelines specify which pipeline this pipeline will pull artifacts from. In this case we will deploy from the test build's artifacts
+    - pipeline: buildPipeline  # pipeline name (DO NOT CHANGE THIS VALUE) 
+      source: deploy-validation-ALMAcceleratorSampleSolution # This is the name of the build pipeline that contains the artifacts to be deployed by this pipeline. NOTE: There must be a successful build for this pipeline available in order to run this pipeline
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+# Get the solution package from artifact uploaded by the build pipeline
+- task: DownloadPipelineArtifact@2
+  displayName: 'Download Build Pipeline Artifact'
+
+steps:
+- task: GitHubRelease@1
+  displayName: 'GitHub release (create)'
+  inputs:
+    gitHubConnection: mikefactorial
+    tagSource: userSpecifiedTag
+    tag: 1.3
+    title: 'Testing Release'
+    releaseNotesSource: inline
+    releaseNotesInline: 'Here''s some release notes'
+    changeLogType: issueBased
+    assets: |
+      $(Pipeline.Workspace)/buildPipeline/drop/*.zip
