@@ -18,8 +18,6 @@ steps:
   displayName: 'Download Build Pipeline Artifact'
 
 - powershell: 
-    Get-ChildItem -Path '$(Pipeline.Workspace)' -recurse
-    Get-ChildItem -Path '$(Build.ArtifactStagingDirectory)' -recurse
     Get-ChildItem -Path '$(Build.SourcesDirectory)' -recurse
 
 - task: GitHubRelease@1
