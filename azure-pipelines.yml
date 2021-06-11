@@ -13,9 +13,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-# Get the solution package from artifact uploaded by the build pipeline
-- task: DownloadPipelineArtifact@2
-  displayName: 'Download Build Pipeline Artifact'
+- task: DownloadBuildArtifacts@0
+  inputs:
+    buildType: 'specific'
+    pipeline: 'buildPipeline'
+    buildVersionToDownload: 'latest'
+    downloadType: 'specific'
+    downloadPath: '$(Pipeline.Workspace)\buildPipeline'
 
 - powershell: 
     Get-ChildItem -Path '$(Build.ArtifactStagingDirectory)' -recurse
