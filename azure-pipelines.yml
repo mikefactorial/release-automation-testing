@@ -19,7 +19,6 @@ steps:
     project: 'AA4AM'
     pipeline: '6'
     runVersion: 'latest'
-    path: '$(Pipeline.Workspace)\buildPipeline'
 
 - powershell: 
     Get-ChildItem -Path '$(Pipeline.Workspace)' -recurse
@@ -29,7 +28,7 @@ steps:
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.10
+    tag: 1.11
     title: 'Testing Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
