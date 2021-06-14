@@ -22,13 +22,15 @@ steps:
 
 - powershell: |
     $monthName = (Get-Date).ToString("MMMM")
+    $yearName = (Get-Date).ToString("YYYY")
     Write-Host "##vso[task.setVariable variable=MonthName]$monthName"
+    Write-Host "##vso[task.setVariable variable=YearName]$yearName"
 - task: GitHubRelease@1
   displayName: 'Create AA4AM GitHub Release'
   inputs:
     gitHubConnection: mikefactorial
-    tagSource: 'gitTag'
-    tagPattern: 'release-v1.*'
+    tagSource: 'userSpecifiedTag'
+    tag: 'ALMAcceleratorForAdvancedMakers-$(MonthName)$(YearName)'
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesSource: inline
     releaseNotesFilePath: 'RELEASENOTES.md'
