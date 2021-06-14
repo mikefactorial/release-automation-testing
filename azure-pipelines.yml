@@ -31,7 +31,7 @@ steps:
     tagPattern: 'release-v1.*'
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesSource: inline
-    releaseNotesFilePath: 'Here''s some release notes'
+    releaseNotesFilePath: 'RELEASENOTES.md'
     changeLogType: issueBased
     assets: |
       $(Pipeline.Workspace)/drop/*managed.zip
