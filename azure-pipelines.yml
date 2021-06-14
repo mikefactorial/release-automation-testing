@@ -28,8 +28,8 @@ steps:
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.16
-    title: 'ALM Accelerator For Advanced Makers $MonthName Release'
+    tag: 1.17
+    title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
     changeLogType: issueBased
