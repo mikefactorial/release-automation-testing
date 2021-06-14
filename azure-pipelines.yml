@@ -28,10 +28,10 @@ steps:
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.11
+    tag: 1.12
     title: 'Testing Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
     changeLogType: issueBased
     assets: |
-      $(Pipeline.Workspace)/buildPipeline/drop/*.zip
+      $(Pipeline.Workspace)/drop/*.zip
