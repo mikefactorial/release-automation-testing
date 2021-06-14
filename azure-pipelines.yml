@@ -20,7 +20,7 @@ steps:
     pipeline: '6'
     runVersion: 'latest'
 
-- powershell: 
+- powershell: |
     $monthName = (Get-Date -Format "B").ToString()
     Write-Host "##vso[task.setVariable variable=MonthName]$monthName"
 - task: GitHubRelease@1
