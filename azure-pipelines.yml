@@ -21,14 +21,14 @@ steps:
     runVersion: 'latest'
 
 - powershell: |
-    $monthName = (Get-Date).ToString("MMM")
+    $monthName = (Get-Date).ToString("MMMM")
     Write-Host "##vso[task.setVariable variable=MonthName]$monthName"
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.17
+    tag: 1.18
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
