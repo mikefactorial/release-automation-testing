@@ -22,16 +22,17 @@ steps:
 
 - powershell: 
     Get-ChildItem -Path '$(Pipeline.Workspace)' -recurse
-
+    $monthName = Get-Date -Format "B"
+    Write-Host "##vso[task.setVariable variable=MonthName]$monthName"
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
   inputs:
     gitHubConnection: mikefactorial
     tagSource: userSpecifiedTag
-    tag: 1.12
-    title: 'Testing Release'
+    tag: 1.16
+    title: 'ALM Accelerator For Advanced Makers $MonthName Release'
     releaseNotesSource: inline
     releaseNotesInline: 'Here''s some release notes'
     changeLogType: issueBased
     assets: |
-      $(Pipeline.Workspace)/drop/*.zip
+      $(Pipeline.Workspace)/drop/*managed.zip
