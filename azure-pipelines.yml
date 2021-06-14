@@ -27,7 +27,7 @@ steps:
   displayName: 'Create AA4AM GitHub Release'
   inputs:
     gitHubConnection: mikefactorial
-    tagSource: 'auto'
+    tagSource: 'gitTag'
     tagPattern: 'release-v1.*'
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesSource: inline
