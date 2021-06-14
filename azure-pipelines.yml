@@ -37,5 +37,7 @@ steps:
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
     releaseNotesFilePath: 'RELEASENOTES.md'
     changeLogType: issueBased
+    isDraft: true
+    isPreRelease: true
     assets: |
       $(Pipeline.Workspace)/drop/*managed.zip
