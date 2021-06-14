@@ -21,7 +21,7 @@ steps:
     runVersion: 'latest'
 
 - powershell: 
-    $monthName = Get-Date -Format "B"
+    $monthName = (Get-Date -Format "B").ToString()
     Write-Host "##vso[task.setVariable variable=MonthName]$monthName"
 - task: GitHubRelease@1
   displayName: 'GitHub release (create)'
