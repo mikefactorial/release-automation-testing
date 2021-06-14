@@ -33,7 +33,6 @@ steps:
     tagSource: 'userSpecifiedTag'
     tag: 'ALMAcceleratorForAdvancedMakers-$(MonthName)$(YearName)'
     title: 'ALM Accelerator For Advanced Makers $(MonthName) Release'
-    releaseNotesSource: inline
     releaseNotesFilePath: 'RELEASENOTES.md'
     changeLogType: issueBased
     assets: |
