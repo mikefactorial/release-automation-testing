@@ -5,6 +5,8 @@
 
 trigger:
 - main
+pr: none
+
 resources:
   pipelines: # The pipelines specify which pipeline this pipeline will pull artifacts from. In this case we will deploy from the test build's artifacts
     - pipeline: buildPipeline  # pipeline name (DO NOT CHANGE THIS VALUE) 
